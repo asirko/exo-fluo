@@ -1,0 +1,41 @@
+<div ng-controller="Shell as vm">
+    <header class="clearfix">
+      <nav class="navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand">
+            <i class="fa fa-home" aria-hidden="true"></i>
+            <span class="brand-title">{{vm.title}}</span>
+          </a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right nav-recipe-to-list">
+          <li>
+            <a ui-sref="recipes">
+              <i class="fa fa-list-alt" aria-hidden="true"></i>
+              Recipes
+            </a>
+          </li>
+          <li>
+            <a ui-sref="list">
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+              Ingredient
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+    </header>
+    <section id="content" class="content">
+
+        <div ui-view class="shuffle-animation"></div>
+
+        <div ngplus-overlay
+             ngplus-overlay-delay-in="50"
+             ngplus-overlay-delay-out="700"
+             ngplus-overlay-animation="dissolve-animation">
+            <img src="images/busy.gif"/>
+
+            <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
+        </div>
+    </section>
+</div>

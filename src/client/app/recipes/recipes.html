@@ -1,0 +1,16 @@
+<section id="recipes" class="mainbar recipes" cg-busy="vm.promiseToDisplay">
+  <h3 class="recipes-description">
+    {{vm.title}}
+  </h3>
+
+  <ul class="recipes-list">
+    <li ng-repeat="recipe in vm.recipes" class="recipes-item" ng-click="vm.goToRecipe(recipe.recipe_id)">
+      <img ng-src="/images/photos/{{recipe.image_name}}">
+      <span class="recipes-item-title">
+        {{recipe.title}}
+      </span>
+
+    </li>
+  </ul>
+
+</section>

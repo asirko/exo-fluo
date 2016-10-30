@@ -1,0 +1,14 @@
+<section id="recipe" class="mainbar" cg-busy="vm.promiseToDisplay">
+  <h2 class="recipe-title">{{vm.title}} {{vm.recipe.title}}</h2>
+  <div class="recipe-instruction" ng-bind-html="vm.recipe.instructions | newline"></div>
+  <input type="number" ng-model="vm.currentServings"> servings
+  <ul class="recipe-ingredient-list">
+    <li ng-repeat="ingredient in vm.recipe.ingredients | orderBy: 'display_index'" class="recipe-ingredient-item">
+      <span ng-show="ingredient.quantity">
+        {{vm.getCurrentQuantity(ingredient) | number}} <span ng-show="ingredient.unit">{{ingredient.unit}} of</span>
+      </span>
+      {{ingredient.name}};
+    </li>
+  </ul>
+  <button class="recipe-add">Add to the list</button>
+</section>

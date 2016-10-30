@@ -1,0 +1,32 @@
+#recipe {
+
+  max-width: 640px;
+  margin: auto;
+
+  input,
+  button{
+    padding: 8px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    background-color: lighten(@color-dark, 20%);
+    border: 1px solid @color-light;
+    text-align: right;
+  }
+
+  input {
+    width: 5em;
+    padding-right: 0;
+  }
+
+  .recipe-ingredient-list {
+    padding-left: 5px;
+  }
+
+  .recipe-ingredient-item {
+    list-style-type: none;
+
+    &:before {
+      content: "-";
+    }
+  }
+}
