@@ -5,9 +5,8 @@ Ce projet est le résultat d'un test technique pour fluo
 Se basant sur [gulp-patterns](https://github.com/johnpapa/gulp-patterns) de John Papa, le projet a les mêmes prérequis :
 
 - Installer Node ;
-- Dans un terminal, se placer dans le répertoire du projet ;
-- Tapper `npm install -g node-inspector bower gulp` (je ne me sers pas de node inspector, il devrait être facultatif) pour les dépendances global ;
-- Tapper `npm install` (lance automatiquement bower).
+- Dans un terminal, tapper `npm install -g node-inspector bower gulp` (je ne me sers pas de node inspector, il devrait être facultatif) pour les dépendances global ;
+- Puis, toujours avec le terminal, se placer dans le répertoire du projet et tapper `npm install` (lance automatiquement bower).
 
 ## Démarrer le projet
 La commande gulp `gulp serve-dev` permet de lancer le projet en mode développement.
