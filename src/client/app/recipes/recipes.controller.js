@@ -9,7 +9,6 @@
   function Recipes(recipesService, $log, $state) {
     var vm = this;
     vm.recipes = [];
-    vm.title = 'Want to cook something?';
     vm.goToRecipe = goToRecipe;
 
     activate();

@@ -6,7 +6,7 @@
     .factory('recipesService', recipesService);
 
   /* @ngInject */
-  function recipesService($http, $location, exception, logger, $q, toastr) {
+  function recipesService($http, $location, exception, logger, $q) {
 
     var service = {
       getRecipes: getRecipes,

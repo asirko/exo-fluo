@@ -1,0 +1,24 @@
+<section id="list" class="mainbar" cg-busy="vm.promiseToDisplay">
+  <h2 class="recipe-title">
+    List of selected ingredients
+  </h2>
+
+  <ul class="list-departements">
+    <li class="list-departement" ng-repeat="(departementKey, departementValue) in vm.list">
+      {{departementKey}}
+      <ul class="list-departement-ingredients">
+        <li class="list-departement-ingredient" ng-repeat="(ingredientKey, ingredientValue) in departementValue">
+          <span ng-show="ingredientValue.quantity">
+            {{ingredientValue.quantity | number}} <span ng-show="ingredientValue.unit">{{ingredientValue.unit}} of</span>
+          </span>
+          {{ingredientKey}}
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="list-empty" ng-show="vm.isListEmpty()">
+    You didn't add any ingredients to the list !
+  </div>
+
+</section>

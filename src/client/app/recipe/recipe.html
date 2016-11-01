@@ -1,7 +1,18 @@
 <section id="recipe" class="mainbar" cg-busy="vm.promiseToDisplay">
-  <h2 class="recipe-title">{{vm.title}} {{vm.recipe.title}}</h2>
+  <h2 class="recipe-title">
+    Recipe of {{vm.recipe.title}}
+  </h2>
   <div class="recipe-instruction" ng-bind-html="vm.recipe.instructions | newline"></div>
+
   <input type="number" ng-model="vm.currentServings"> servings
+
+  <div ng-show="vm.currentServings !== vm.recipe.servings" class="recipe-warning">
+    <strong>Note:</strong> La liste
+    The following ingredients list is adjusted for {{vm.currentServings}} servings.
+    However, the instructions above correspond to a preparation for {{vm.recipe.servings}} guests.
+    Keep in mind to adjust the time, temperature and quantities as needed.
+  </div>
+
   <ul class="recipe-ingredient-list">
     <li ng-repeat="ingredient in vm.recipe.ingredients | orderBy: 'display_index'" class="recipe-ingredient-item">
       <span ng-show="ingredient.quantity">
@@ -10,5 +21,5 @@
       {{ingredient.name}};
     </li>
   </ul>
-  <button class="recipe-add">Add to the list</button>
+  <button class="recipe-add" ng-click="vm.addToList()">Add to the list</button>
 </section>

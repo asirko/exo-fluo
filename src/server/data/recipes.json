@@ -289,7 +289,7 @@
                 "display_index": 7,
                 "name": "salt and pepper",
                 "department": "Spices",
-                "quantity": 1,
+                "quantity": 0,
                 "unit": ""
             },
             {
@@ -670,7 +670,7 @@
                 "display_index": 7,
                 "name": "salt",
                 "department": "Baking",
-                "quantity": 1.23223039580426,
+                "quantity": 0,
                 "unit": "ml"
             },
             {

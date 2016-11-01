@@ -1,7 +1,7 @@
 (function() {
     'use strict';
 
-    angular.module('app.recipes', [
+    angular.module('app.list', [
         'app.core'
     ]);
 

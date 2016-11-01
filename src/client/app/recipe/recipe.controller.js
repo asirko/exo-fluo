@@ -5,10 +5,11 @@
     .module('app.recipe')
     .controller('Recipe', Recipe);
 
-  function Recipe(recipesService, logger, $stateParams) {
+  function Recipe(recipesService, $stateParams, listService, logger, $q) {
     var vm = this;
-    vm.title = 'Recipe of';
     vm.getCurrentQuantity = getCurrentQuantity;
+    vm.addToList = addToList;
+    vm.promiseToDisplay = $q.when();
 
     activate();
 
@@ -25,6 +26,12 @@
 
     function getCurrentQuantity(ingredient) {
       return vm.currentServings / vm.recipe.servings * ingredient.quantity;
+    }
+
+    function addToList() {
+      vm.promiseToDisplay = listService.addToList(vm.recipe, vm.currentServings).then(function() {
+        logger.success('Ingredients added to the list');
+      });
     }
   }
 })();

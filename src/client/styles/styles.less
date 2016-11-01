@@ -3,6 +3,7 @@
 
 @import "recipes";
 @import "recipe";
+@import "list";
 
 body {
   background-color: @color-dark;
@@ -10,10 +11,38 @@ body {
 }
 
 #content{
-  margin-top: 50px;
+  margin-top: 70px;
   padding: 0 20px;
 }
 
 .nav-recipe-to-list {
   margin-right: 0;
+  margin-left: 0;
+}
+
+.toggler-icon {
+  float: right;
+  height: inherit;
+  padding: 6px 9px;
+  border: 1px solid black;
+  margin: 8px;
+  color: @color-light !important;
+  border-radius: 6px;
+}
+
+#toggler {
+  position: absolute;
+  left: -9999px;
+}
+
+@media screen and (min-width: 768px) {
+  .toggler-icon {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #toggler:checked ~ ul {
+    display: none;
+  }
 }
