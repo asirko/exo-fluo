@@ -5,7 +5,7 @@
 
   <ul class="list-departements">
     <li class="list-departement" ng-repeat="(departementKey, departementValue) in vm.list">
-      {{departementKey}}
+      <span class="list-departement-name">{{departementKey}}</span>
       <ul class="list-departement-ingredients">
         <li class="list-departement-ingredient" ng-repeat="(ingredientKey, ingredientValue) in departementValue">
           <span ng-show="ingredientValue.quantity">
