@@ -1,15 +1,15 @@
-(function() {
-  'use strict';
+(function () {
+    'use strict';
 
-  angular
-    .module('blocks.filter')
-    .filter('newline', newline);
+    angular
+        .module('blocks.filter')
+        .filter('newline', newline);
 
-  function newline() {
-    return function(text) {
-      text = text || '';
-      return text.replace(/\n/g, '<br>');
+    function newline() {
+        return function (text) {
+            text = text || '';
+            return text.replace(/\n/g, '<br>');
+        };
     }
-  }
 
 })();
